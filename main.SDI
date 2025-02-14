@@ -1,0 +1,122 @@
+,,,#include <xc.h>         // XC8 general header for PIC
+,,,#include <stdint.h>     // For uint8_t, uint16_t types
+,,,#include <stdbool.h>    // For boolean types
+,,,
+,,,#define SCL PORTCbits.RC3   // SCL line
+,,,#define SDA PORTCbits.RC4   // SDA line
+,,,#define _XTAL_FREQ 4000000   // Define your crystal frequency (4MHz in this case)
+,,,
+,,,unsigned short num;
+,,,const int TC74A0 = 0x90;   // TC74 address
+,,,
+,,,// I2C initialization function
+,,,void I2C_Init(void) {
+,,,    // Set SCL and SDA as output initially
+,,,    TRISCbits.TRISC3 = 0;  // SCL as output
+,,,    TRISCbits.TRISC4 = 0;  // SDA as output
+,,,
+,,,    // Initialize I2C bus (both lines high)
+,,,    SCL = 1;
+,,,    SDA = 1;
+,,,
+,,,    __delay_ms(10);  ;  // Stabilize bus
+,,,}
+,,,
+,,,// I2C communication routines (bit-banging implementation if needed)
+,,,
+,,,void I2C_Start(void) {
+,,,    SDA = 1;
+,,,    SCL = 1;
+,,,    __delay_us(10); ; // Start condition
+,,,    SDA = 0;
+,,,    __delay_us(10);;
+,,,    SCL = 0;
+,,,}
+,,,
+,,,void I2C_Stop(void) {
+,,,    SDA = 0;
+,,,    SCL = 1;
+,,,    __delay_us(10);;
+,,,    SDA = 1;
+,,,    __delay_us(10);;
+,,,}
+,,,
+,,,void I2C_Write(unsigned char data) {
+,,,    for (int i = 0; i < 8; i++) {
+,,,        SDA = (data & 0x80) ? 1 : 0;
+,,,        data <<= 1;
+,,,        __delay_us(10);;
+,,,        SCL = 1;
+,,,        __delay_us(10);;
+,,,        SCL = 0;
+,,,    }
+,,,    // Acknowledge bit
+,,,    TRISCbits.TRISC4 = 1;  // SDA as input for ACK
+,,,    SCL = 1;
+,,,    __delay_us(10);;
+,,,    SCL = 0;
+,,,    TRISCbits.TRISC4 = 0;  // SDA as output again
+,,,}
+,,,
+,,,unsigned char I2C_Read(unsigned char ack) {
+,,,    unsigned char data = 0;
+,,,    TRISCbits.TRISC4 = 1;  // SDA as input
+,,,    for (int i = 0; i < 8; i++) {
+,,,        data <<= 1;
+,,,        SCL = 1;
+,,,        __delay_us(10);;
+,,,        if (SDA) data |= 1;
+,,,        SCL = 0;
+,,,        __delay_us(10);;
+,,,    }
+,,,    // Send acknowledge
+,,,    TRISCbits.TRISC4 = 0;  // SDA as output
+,,,    SDA = ack ? 0 : 1;
+,,,    SCL = 1;
+,,,    __delay_us(10);;
+,,,    SCL = 0;
+,,,    return data;
+,,,}
+,,,
+,,,unsigned short Read_Temp(void) {
+,,,    unsigned short result;
+,,,    I2C_Start();              ;              // Issue start signal
+,,,    I2C_Write(TC74A0);        ;        // Address with write bit
+,,,    I2C_Write(0x00);          ;          // Command to read temperature
+,,,    I2C_Start();              ;              // Issue repeated start
+,,,    I2C_Write(TC74A0 | 1);    ;    // Address with read bit
+,,,    result = I2C_Read(0);     ;     // Read temperature
+,,,    I2C_Stop();               ;               // Issue stop condition
+,,,    return result;
+,,,}
+,,,
+,,,// Updated function to control LEDs based on temperature
+,,,void Display_Temperature(unsigned short temp) {
+,,,    // Check if temperature is below 30°C
+,,,    if (temp < 30) {
+,,,        PORTB &= 0b00000011;  // Turn off all LEDs except I2C pins (RB0, RB1)
+,,,    }
+,,,    // Check if temperature is between 30°C and 60°C
+,,,    else if (temp >= 30 && temp < 60) {
+,,,        PORTB &= 0b00000011;  // Turn off all LEDs
+,,,        PORTB |= 0b00001100;  // Turn on D1 (RB2) and D2 (RB3)
+,,,    }
+,,,    // Check if temperature is 60°C or higher
+,,,    else if (temp >= 60) {
+,,,        PORTB |= 0b00111100;  // Turn on all LEDs (D1 to D6, RB2 to RB7)
+,,,    }
+,,,}
+,,,
+,,,void main() {
+,,,    TRISA = 0x00;  // Configure PORTA as output
+,,,    TRISC = 0x00;  // Configure PORTC as output
+,,,    TRISB = 0x00;  // Configure PORTB as output (RB0 and RB1 for I2C)
+,,,
+,,,    I2C_Init();    ;    // Initialize I2C
+,,,
+,,,    while (1) {
+,,,        num = Read_Temp();  ;  // Read temperature from TC74
+,,,        Display_Temperature(num);  ;  // Display it on LEDs
+,,,        __delay_ms(500);    ;    // Wait before next read
+,,,    }
+,,,}

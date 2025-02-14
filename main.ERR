@@ -1,0 +1,106 @@
+Error[105]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 1 : Cannot open file (Include File "<xc.h>         // XC8 general header for PIC" not found)
+Error[105]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 2 : Cannot open file (Include File "<stdint.h>     // For uint8_t, uint16_t types" not found)
+Error[105]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 3 : Cannot open file (Include File "<stdbool.h>    // For boolean types" not found)
+Error[122]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 9 : Illegal opcode (short)
+Error[122]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 10 : Illegal opcode (int)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 12 : Illegal character (/)
+Error[122]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 13 : Illegal opcode (I2C_Init)
+Error[106]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 14 : String substitution too complex
+Error[106]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 14 : String substitution too complex
+Error[148]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 14 : Expanded source line exceeded 200 characters.
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 14 : Illegal character (/)
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 15 : Found label after column 1. (TRISCbits.TRISC3)
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 16 : Found label after column 1. (TRISCbits.TRISC4)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 18 : Illegal character (/)
+Error[106]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 19 : String substitution too complex
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 19 : Found label after column 1. (PORTCbits.RC3)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 19 : Illegal character (/)
+Error[106]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 20 : String substitution too complex
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 20 : Found label after column 1. (PORTCbits.RC4)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 20 : Illegal character (/)
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 22 : Found label after column 1. (__delay_ms)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 22 : Illegal character (()
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 23 : Illegal character (})
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 25 : Illegal character (/)
+Error[122]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 27 : Illegal opcode (I2C_Start)
+Error[106]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 28 : String substitution too complex
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 28 : Found label after column 1. (PORTCbits.RC4)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 28 : Illegal character (/)
+Error[106]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 29 : String substitution too complex
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 29 : Found label after column 1. (PORTCbits.RC3)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 29 : Illegal character (/)
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 30 : Found label after column 1. (__delay_us)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 30 : Illegal character (()
+Error[106]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 31 : String substitution too complex
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 31 : Found label after column 1. (PORTCbits.RC4)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 31 : Illegal character (/)
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 32 : Found label after column 1. (__delay_us)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 32 : Illegal character (()
+Error[106]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 33 : String substitution too complex
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 33 : Found label after column 1. (PORTCbits.RC3)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 33 : Illegal character (/)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 34 : Illegal character (})
+Error[122]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 36 : Illegal opcode (I2C_Stop)
+Error[106]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 37 : String substitution too complex
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 37 : Found label after column 1. (PORTCbits.RC4)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 37 : Illegal character (/)
+Error[106]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 38 : String substitution too complex
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 38 : Found label after column 1. (PORTCbits.RC3)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 38 : Illegal character (/)
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 39 : Found label after column 1. (__delay_us)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 39 : Illegal character (()
+Error[106]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 40 : String substitution too complex
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 40 : Found label after column 1. (PORTCbits.RC4)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 40 : Illegal character (/)
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 41 : Found label after column 1. (__delay_us)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 41 : Illegal character (()
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 42 : Illegal character (})
+Error[122]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 44 : Illegal opcode (I2C_Write)
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 45 : Found label after column 1. (for)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 45 : Illegal character (()
+Error[106]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 46 : String substitution too complex
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 46 : Found label after column 1. (PORTCbits.RC4)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 46 : Illegal character (/)
+Error[131]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 47 : Processor type is undefined
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 48 : Found label after column 1. (__delay_us)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 48 : Illegal character (()
+Error[106]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 49 : String substitution too complex
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 49 : Found label after column 1. (PORTCbits.RC3)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 49 : Illegal character (/)
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 50 : Found label after column 1. (__delay_us)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 50 : Illegal character (()
+Error[106]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 51 : String substitution too complex
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 51 : Found label after column 1. (PORTCbits.RC3)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 51 : Illegal character (/)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 52 : Illegal character (})
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 53 : Illegal character (/)
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 54 : Found label after column 1. (TRISCbits.TRISC4)
+Error[106]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 55 : String substitution too complex
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 55 : Found label after column 1. (PORTCbits.RC3)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 55 : Illegal character (/)
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 56 : Found label after column 1. (__delay_us)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 56 : Illegal character (()
+Error[106]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 57 : String substitution too complex
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 57 : Found label after column 1. (PORTCbits.RC3)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 57 : Illegal character (/)
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 58 : Found label after column 1. (TRISCbits.TRISC4)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 59 : Illegal character (})
+Error[122]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 61 : Illegal opcode (char)
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 62 : Found label after column 1. (unsigned)
+Error[122]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 62 : Illegal opcode (char)
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 63 : Found label after column 1. (TRISCbits.TRISC4)
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 64 : Found label after column 1. (for)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 64 : Illegal character (()
+Error[131]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 65 : Processor type is undefined
+Error[106]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 66 : String substitution too complex
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 66 : Found label after column 1. (PORTCbits.RC3)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 66 : Illegal character (/)
+Warning[207] ..\KURSOVA\KURSOVA_1.X\MAIN.C 67 : Found label after column 1. (__delay_us)
+Error[108]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 67 : Illegal character (()
+Error[106]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 68 : String substitution too complex
+Error[113]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 68 : Symbol not previously defined (PORTCbits.RC4)
+Error[128]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 68 : Missing argument(s)
+Error[113]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 68 : Symbol not previously defined (PORTCbits.RC4)
+Error[128]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 68 : Missing argument(s)
+Error[113]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 68 : Symbol not previously defined (data)
+Error[128]   ..\KURSOVA\KURSOVA_1.X\MAIN.C 68 : Missing argument(s)

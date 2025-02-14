@@ -1,0 +1,285 @@
+MPASM  5.35                            MAIN.C   10-12-2024  15:58:14         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Error[105]  : Cannot open file (Include File "<xc.h>         // XC8 general header for PIC" not found)
+                      00001 #include <xc.h>         // XC8 general header for PIC
+Error[105]  : Cannot open file (Include File "<stdint.h>     // For uint8_t, uint16_t types" not found)
+                      00002 #include <stdint.h>     // For uint8_t, uint16_t types
+Error[105]  : Cannot open file (Include File "<stdbool.h>    // For boolean types" not found)
+                      00003 #include <stdbool.h>    // For boolean types
+                      00004 
+                      00005 #define SCL PORTCbits.RC3   // SCL line
+                      00006 #define SDA PORTCbits.RC4   // SDA line 
+                      00007 #define _XTAL_FREQ 4000000   // Define your crystal frequency (4MHz in this case)
+                      00008 
+Error[122]  : Illegal opcode (short)
+                      00009 unsigned short num;
+Error[122]  : Illegal opcode (int)
+                      00010 const int TC74A0 = 0x90;   // TC74 address
+                      00011 
+Error[108]  : Illegal character (/)
+                      00012 // I2C initialization function
+Error[122]  : Illegal opcode (I2C_Init)
+                      00013 void I2C_Init(void) {
+Error[106]  : String substitution too complex
+Error[106]  : String substitution too complex
+Error[148]  : Expanded source line exceeded 200 characters.
+Error[108]  : Illegal character (/)
+                      00014     // Set SCL and SDA as output initially
+Warning[207]: Found label after column 1. (TRISCbits.TRISC3)
+  00000000            00015     TRISCbits.TRISC3 = 0;  // SCL as output
+Warning[207]: Found label after column 1. (TRISCbits.TRISC4)
+  00000000            00016     TRISCbits.TRISC4 = 0;  // SDA as output
+                      00017     
+Error[108]  : Illegal character (/)
+                      00018     // Initialize I2C bus (both lines high)
+Error[106]  : String substitution too complex
+Warning[207]: Found label after column 1. (PORTCbits.RC3)
+Error[108]  : Illegal character (/)
+                      00019     SCL = 1;
+Error[106]  : String substitution too complex
+Warning[207]: Found label after column 1. (PORTCbits.RC4)
+Error[108]  : Illegal character (/)
+                      00020     SDA = 1;
+                      00021     
+Warning[207]: Found label after column 1. (__delay_ms)
+Error[108]  : Illegal character (()
+                      00022     __delay_ms(10);  ;  // Stabilize bus
+Error[108]  : Illegal character (})
+                      00023 }
+                      00024 
+Error[108]  : Illegal character (/)
+                      00025 // I2C communication routines (bit-banging implementation if needed)
+                      00026 
+Error[122]  : Illegal opcode (I2C_Start)
+                      00027 void I2C_Start(void) {
+Error[106]  : String substitution too complex
+MPASM  5.35                            MAIN.C   10-12-2024  15:58:14         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[207]: Found label after column 1. (PORTCbits.RC4)
+Error[108]  : Illegal character (/)
+                      00028     SDA = 1;
+Error[106]  : String substitution too complex
+Warning[207]: Found label after column 1. (PORTCbits.RC3)
+Error[108]  : Illegal character (/)
+                      00029     SCL = 1;
+Warning[207]: Found label after column 1. (__delay_us)
+Error[108]  : Illegal character (()
+                      00030     __delay_us(10); ; // Start condition
+Error[106]  : String substitution too complex
+Warning[207]: Found label after column 1. (PORTCbits.RC4)
+Error[108]  : Illegal character (/)
+                      00031     SDA = 0;
+Warning[207]: Found label after column 1. (__delay_us)
+Error[108]  : Illegal character (()
+                      00032     __delay_us(10);;
+Error[106]  : String substitution too complex
+Warning[207]: Found label after column 1. (PORTCbits.RC3)
+Error[108]  : Illegal character (/)
+                      00033     SCL = 0;
+Error[108]  : Illegal character (})
+                      00034 }
+                      00035 
+Error[122]  : Illegal opcode (I2C_Stop)
+                      00036 void I2C_Stop(void) {
+Error[106]  : String substitution too complex
+Warning[207]: Found label after column 1. (PORTCbits.RC4)
+Error[108]  : Illegal character (/)
+                      00037     SDA = 0;
+Error[106]  : String substitution too complex
+Warning[207]: Found label after column 1. (PORTCbits.RC3)
+Error[108]  : Illegal character (/)
+                      00038     SCL = 1;
+Warning[207]: Found label after column 1. (__delay_us)
+Error[108]  : Illegal character (()
+                      00039     __delay_us(10);;
+Error[106]  : String substitution too complex
+Warning[207]: Found label after column 1. (PORTCbits.RC4)
+Error[108]  : Illegal character (/)
+                      00040     SDA = 1;
+Warning[207]: Found label after column 1. (__delay_us)
+Error[108]  : Illegal character (()
+                      00041     __delay_us(10);;
+Error[108]  : Illegal character (})
+                      00042 }
+                      00043 
+Error[122]  : Illegal opcode (I2C_Write)
+                      00044 void I2C_Write(unsigned char data) {
+Warning[207]: Found label after column 1. (for)
+Error[108]  : Illegal character (()
+                      00045     for (int i = 0; i < 8; i++) {
+Error[106]  : String substitution too complex
+MPASM  5.35                            MAIN.C   10-12-2024  15:58:14         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[207]: Found label after column 1. (PORTCbits.RC4)
+Error[108]  : Illegal character (/)
+                      00046         SDA = (data & 0x80) ? 1 : 0;
+Error[131]  : Processor type is undefined
+                      00047         data <<= 1;
+Warning[207]: Found label after column 1. (__delay_us)
+Error[108]  : Illegal character (()
+                      00048         __delay_us(10);;
+Error[106]  : String substitution too complex
+Warning[207]: Found label after column 1. (PORTCbits.RC3)
+Error[108]  : Illegal character (/)
+                      00049         SCL = 1;
+Warning[207]: Found label after column 1. (__delay_us)
+Error[108]  : Illegal character (()
+                      00050         __delay_us(10);;
+Error[106]  : String substitution too complex
+Warning[207]: Found label after column 1. (PORTCbits.RC3)
+Error[108]  : Illegal character (/)
+                      00051         SCL = 0;
+Error[108]  : Illegal character (})
+                      00052     }
+Error[108]  : Illegal character (/)
+                      00053     // Acknowledge bit
+Warning[207]: Found label after column 1. (TRISCbits.TRISC4)
+  00000001            00054     TRISCbits.TRISC4 = 1;  // SDA as input for ACK
+Error[106]  : String substitution too complex
+Warning[207]: Found label after column 1. (PORTCbits.RC3)
+Error[108]  : Illegal character (/)
+  00000001            00055     SCL = 1;
+Warning[207]: Found label after column 1. (__delay_us)
+Error[108]  : Illegal character (()
+  00000001            00056     __delay_us(10);;
+Error[106]  : String substitution too complex
+Warning[207]: Found label after column 1. (PORTCbits.RC3)
+Error[108]  : Illegal character (/)
+  00000001            00057     SCL = 0;
+Warning[207]: Found label after column 1. (TRISCbits.TRISC4)
+  00000000            00058     TRISCbits.TRISC4 = 0;  // SDA as output again
+Error[108]  : Illegal character (})
+  00000000            00059 }
+                      00060 
+Error[122]  : Illegal opcode (char)
+                      00061 unsigned char I2C_Read(unsigned char ack) {
+Warning[207]: Found label after column 1. (unsigned)
+Error[122]  : Illegal opcode (char)
+                      00062     unsigned char data = 0;
+Warning[207]: Found label after column 1. (TRISCbits.TRISC4)
+  00000001            00063     TRISCbits.TRISC4 = 1;  // SDA as input
+Warning[207]: Found label after column 1. (for)
+Error[108]  : Illegal character (()
+  00000001            00064     for (int i = 0; i < 8; i++) {
+Error[131]  : Processor type is undefined
+                      00065         data <<= 1;
+MPASM  5.35                            MAIN.C   10-12-2024  15:58:14         PAGE  4
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Error[106]  : String substitution too complex
+Warning[207]: Found label after column 1. (PORTCbits.RC3)
+Error[108]  : Illegal character (/)
+                      00066         SCL = 1;
+Warning[207]: Found label after column 1. (__delay_us)
+Error[108]  : Illegal character (()
+                      00067         __delay_us(10);;
+Error[106]  : String substitution too complex
+Error[113]  : Symbol not previously defined (PORTCbits.RC4)
+Error[128]  : Missing argument(s)
+Error[113]  : Symbol not previously defined (PORTCbits.RC4)
+Error[128]  : Missing argument(s)
+Error[113]  : Symbol not previously defined (data)
+Error[128]  : Missing argument(s)
+                      00068         if (SDA) data |= 1;
+                      00069         SCL = 0;
+                      00070         __delay_us(10);;
+                      00071     }
+                      00072     // Send acknowledge
+                      00073     TRISCbits.TRISC4 = 0;  // SDA as output
+                      00074     SDA = ack ? 0 : 1;
+                      00075     SCL = 1;
+                      00076     __delay_us(10);;
+                      00077     SCL = 0;
+                      00078     return data;
+                      00079 }
+                      00080 
+                      00081 unsigned short Read_Temp(void) {
+                      00082     unsigned short result;
+                      00083     I2C_Start();              ;              // Issue start signal
+                      00084     I2C_Write(TC74A0);        ;        // Address with write bit
+                      00085     I2C_Write(0x00);          ;          // Command to read temperature
+                      00086     I2C_Start();              ;              // Issue repeated start
+                      00087     I2C_Write(TC74A0 | 1);    ;    // Address with read bit
+                      00088     result = I2C_Read(0);     ;     // Read temperature
+                      00089     I2C_Stop();               ;               // Issue stop condition
+                      00090     return result;
+                      00091 }
+                      00092 
+                      00093 // Updated function to control LEDs based on temperature
+                      00094 void Display_Temperature(unsigned short temp) {
+                      00095     // Check if temperature is below 30°C
+                      00096     if (temp < 30) {
+                      00097         PORTB &= 0b00000011;  // Turn off all LEDs except I2C pins (RB0, RB1)
+                      00098     }
+                      00099     // Check if temperature is between 30°C and 60°C
+                      00100     else if (temp >= 30 && temp < 60) {
+                      00101         PORTB &= 0b00000011;  // Turn off all LEDs
+                      00102         PORTB |= 0b00001100;  // Turn on D1 (RB2) and D2 (RB3)
+                      00103     }
+                      00104     // Check if temperature is 60°C or higher
+                      00105     else if (temp >= 60) {
+                      00106         PORTB |= 0b00111100;  // Turn on all LEDs (D1 to D6, RB2 to RB7)
+MPASM  5.35                            MAIN.C   10-12-2024  15:58:14         PAGE  5
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00107     }
+                      00108 }
+                      00109 
+                      00110 void main() {
+                      00111     TRISA = 0x00;  // Configure PORTA as output
+                      00112     TRISC = 0x00;  // Configure PORTC as output
+                      00113     TRISB = 0x00;  // Configure PORTB as output (RB0 and RB1 for I2C)
+                      00114 
+                      00115     I2C_Init();    ;    // Initialize I2C
+                      00116 
+                      00117     while (1) {
+                      00118         num = Read_Temp();  ;  // Read temperature from TC74
+                      00119         Display_Temperature(num);  ;  // Display it on LEDs
+                      00120         __delay_ms(500);    ;    // Wait before next read
+                      00121     }
+                      00122 }
+MPASM  5.35                            MAIN.C   10-12-2024  15:58:14         PAGE  6
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+SCL                               PORTCbits.RC3   // SCL line
+SDA                               PORTCbits.RC4   // SDA line
+TRISCbits.TRISC3                  00000000
+TRISCbits.TRISC4                  00000001
+_XTAL_FREQ                        4000000   // Define your crystal frequency (4MHz in this case)
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+
+All other memory blocks unused.
+
+Program Memory Words Used:     0
+Program Memory Words Free:     1
+
+
+Errors   :    74
+Warnings :    32 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+
